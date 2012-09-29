@@ -6,7 +6,9 @@ In this homework, you will understand what a process is. And you will know how t
 
 There are many example codes in this instruction, which demostrate many useful skills that can help you pass messages from one process to another process. After that, you will be asked to implement a simple shell.
 
+If you found any error in this homework or you have any problem about this homework, feel free to tell TAs on the E3. This instruction will be updated immediately if there's any error in this documentation and/or example codes.
 
+The newest files can alway be found from [github](https://github.com/itsPG/os_hw3). You may want to download the auto compressed zip file from **[here](https://github.com/itsPG/os_hw3/zipball/master)**.
 ---
 
 # Instruction
