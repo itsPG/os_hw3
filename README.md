@@ -290,12 +290,12 @@ When testing your shell, the input may be like this: `ls | grep .c | ./line_numb
 
 ### Basic:
 
-* 20% A guide and scripts (or makefiles) help me compile and run your program.
+* 40% A guide and scripts (or makefiles) help me compile and run your program.
 * 10% Your program can detect Ctrl+C.
-* 20% Your program can execute program with argument by exec family function.
+* 10% Your program can execute program with argument by exec family function.
 * 20% Your program can execute most 3 commands and connect them using pipe.
-* 15% Your program can redirect stderr msg.
-* 15% Your program can use clipboard command.
+* 10% Your program can redirect stderr msg.
+* 10% Your program can use clipboard command.
 
 ### Extra:
 * +10% if your program can deal with most 100 commands.
