@@ -245,6 +245,7 @@ In this homework, you will implement a very simple shell called **Y-SHELL**.
 * Executes programs with arguments. For example: `ls -l -a`
 * Pipes data from one command to another command. For example : `ls -l -a | grep .txt | grep rwx` (There would be at most three command. i.e. `A | B | C`)
 * Redirects all messages from stderr to a FIFO. For example: if you type `ls | grep`, there would be an error message like " Try `grep --help' for more information.". You need to redirect this message to FIFO. (So we can check this message by another program.)
+* Clipboard: cut commands' output to shared memory from a pipe by command '^', and paste the content of clipboard to pipe by command '>'. For example: User A may use `ls | ^` to send the result of `ls` to a shared clipboard. Then User B may use `>` to show the content of clipboard or use '> | grep c' to receive the content of clipboard and send it to `grep c` command.
 
 
 Your shell should run programs by [exec family function](http://pubs.opengroup.org/onlinepubs/009604499/functions/exec.html). 
@@ -257,9 +258,14 @@ Your shell should run programs by [exec family function](http://pubs.opengroup.o
 ## For simplification :
 
 * The length of command is less than 3000. For example: The length of `ls | grep .txt` is 14.
-* Every command would execute successfully. For example: `ls | grep txt | grep rwx` You don't need to worry about if `grep txt` failed.
-* You may create your FIFO by command `mkfifo`. And use a fixed FIFO name if you need to.
+* Every command would exist and execute successfully. You don't need to worry about segmentation fault happen.
+* You may assume all inputs are leagal. There's exactly one " " char between every command, pipe, and argument. For example: the test data won't be `ls|grep c`, `ls -l|grep c`, `ls || grep c` ,nor `ls   |    grep c`.
+* You may create your FIFO in your installing script. And use a fixed FIFO name if you need to.
 * You just need to dup a "O_WRONLY | O_NONBLOCK" FIFO to stderr. If you successfully dup FIFO to stderr, the stderr outputed by commands will disappear. If you dup a nonblock FIFO to stderr and this FIFO is not ready yet, the stderr may appear. That is fine for this homework. => i.e. In this homework, we don't care stderr disappear or not.
+* Clipboard command: `^` will only appear at the end of line. `>` will only appear at the start of line. For example: `ls | ^`, `> | grep c`.
+* Clipboard command: `^`(cut commands' output to clipboard) won't be a single command. (but `>`(paste) will).
+* You don't need to handle synchronization problem. Therefore, you may assume shared memory won't be written at the same time.
+
 
 ## For testing your shell :
 
@@ -284,21 +290,22 @@ When testing your shell, the input may be like this: `ls | grep .c | ./line_numb
 
 ### Basic:
 
-* 10% Homework report.
 * 20% A guide and scripts (or makefiles) help me compile and run your program.
 * 10% Your program can detect Ctrl+C.
 * 20% Your program can execute program with argument by exec family function.
 * 20% Your program can execute most 3 commands and connect them using pipe.
-* 20% Your program can redirect stderr msg.
+* 15% Your program can redirect stderr msg.
+* 15% Your program can use clipboard command.
 
 ### Extra:
 * +10% if your program can deal with most 100 commands.
-* +0% if you provide a .git directory. (However, .git log may prove that your code is origin.)
+* + 5% if your shell has only one executable file.
+* + 0% if you provide a .git directory. (However, .git log may prove that your code is origin.)
 * -8%~80% if your code is (very similiar to / exactly the same as) any others' code. 
 
 ## Gently reminding
 
-Although this homework can be finished very quickly (There are only **130** lines in my final code.), you may spend lots of time testing and dealing with pipes. Make sure you reserve enough time for this homework if this is your first time coping with pipes.
+Although this homework can be finished very quickly (There are only **150** lines in my final code.), you may spend lots of time testing and dealing with pipes. Make sure you reserve enough time for this homework if this is your first time coping with pipes.
 
 # Submission
 
