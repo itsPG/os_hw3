@@ -4,11 +4,11 @@
 
 In this homework, you will understand what a process is. And you will know how to communicate with processes. 
 
-There are many example codes in this instruction, which demostrate many useful skills that can help you pass messages from one process to another process. After that, you will be asked to implement a simple shell.
+There are many example codes in this instruction, which demonstrate many useful skills that can help you pass messages from one process to another process. After that, you will be asked to implement a simple shell.
 
 If you found any error in this homework or you have any problem about this homework, feel free to tell TAs on the E3. This instruction will be updated immediately if there's any error in this documentation and/or example codes.
 
-The newest files can alway be found from [github](https://github.com/itsPG/os_hw3). You may want to download the auto compressed zip file from **[here](https://github.com/itsPG/os_hw3/zipball/master)**.
+The newest files can always be found from [github](https://github.com/itsPG/os_hw3). You may want to download the auto compressed zip file from **[here](https://github.com/itsPG/os_hw3/zipball/master)**.
 ---
 
 # Instruction
@@ -19,7 +19,7 @@ The newest files can alway be found from [github](https://github.com/itsPG/os_hw
 
 In this part, we will show how to list those running process and extract information from `/proc`.
 
-If you want to know more about this special virtual directory. You may look up [Kernel documentaion](http://www.kernel.org/doc/Documentation/filesystems/proc.txt) for more information.
+If you want to know more about this special virtual directory. You may look up [Kernel documentation](http://www.kernel.org/doc/Documentation/filesystems/proc.txt) for more information.
 
 ### Step 1
 
@@ -68,7 +68,7 @@ Type `sudo cat /proc/$(PID of a running process)/maps`.
 
 In this part, I will list some basic and/or useful skill that will help you do this homework.
 
-This is TA's personal suggestion, if you are familier with Linux Programming, you may skip this part.
+This is TA's personal suggestion, if you are familiar with Linux Programming, you may skip this part.
 
 
 ### Programming Language
@@ -108,9 +108,9 @@ Fork() returns
 
 > : -1, if fork() failed.
 
-> : 0, if fork() successed and this is a child process.
+> : 0, if fork() succeeded and this is a child process.
 
-> : child's pid, if fork() successed and this is a parent process. 
+> : child's pid, if fork() succeeded and this is a parent process. 
 
 ### Fork example 1
 
@@ -173,9 +173,9 @@ In this homework, we will cover
 
 Signal, also known as software interrupt, is a way to communicate with process. For example, when you press `Ctrl+C`, a SIGQUIT is sent to quit the process which is running. You can use `kill -l` to list all available signal.
 
-When process receive a signal, it can ignore it, do the default action (for example: quit), or do the registed handle function. 
+When process receive a signal, it can ignore it, do the default action (for example: quit), or do the registered handle function. 
 
-Linux (usually) dosen't allow user to create new signal type, but it reserves two signal: SIGUSR1, SIGUSR2 for IPC use. The default action of SIGUSR1 and SIGUSR2 is "ignore".
+Linux (usually) doesn't allow user to create new signal type, but it reserves two signal: SIGUSR1, SIGUSR2 for IPC use. The default action of SIGUSR1 and SIGUSR2 is "ignore".
 
 Some useful functions are listed below:
 
@@ -193,7 +193,7 @@ Some useful functions are listed below:
 
 ## Pipe
 
-Pipe is a useful way to send data from one process to another process through file descriptor, however, it can only communate between processes those have the same parent. Let's see how it work:
+Pipe is a useful way to send data from one process to another process through file descriptor, however, it can only communicate between processes those have the same parent. Let's see how it work:
 
 	int main()
 	{
@@ -202,9 +202,9 @@ Pipe is a useful way to send data from one process to another process through fi
 		return 0;
 	}
 
-When you call `pipe(f)`, linux kernel will create a new pipe, and give f[0] and f[1] the file descriptor representing to this new pipe respectively. Whenever you `write()` sometiong to f[1], you could read those written data through f[0].
+When you call `pipe(f)`, linux kernel will create a new pipe, and give f[0] and f[1] the file descriptor representing to this new pipe respectively. Whenever you `write()` something to f[1], you could read those written data through f[0].
 
-If `read()` can not read data from f[0], process will be blocked here and waiting for `write()` instead of returing 0 immediately, unless the pipe f[1] has been closed. If you `fork()` a process, the pipes created before `fork()` would be forked too. Therefore, when you want to close a forked piped, you need to close it in parent and child respectively. The detail of manipulate a pipe is very important, and it will be shown in example.
+If `read()` can not read data from f[0], process will be blocked here and waiting for `write()` instead of returning 0 immediately, unless the pipe f[1] has been closed. If you `fork()` a process, the pipes created before `fork()` would be forked too. Therefore, when you want to close a forked piped, you need to close it in parent and child respectively. The detail of manipulate a pipe is very important, and it will be shown in example.
 
 ## Pipe example 1
 
@@ -214,7 +214,7 @@ If `read()` can not read data from f[0], process will be blocked here and waitin
 
 ## FIFO
 
-The behavior of FIFO is similiar to pipe. However, FIFO can pass data between different processes, which pipe can't. To use FIFO, you need to use [mkfifo()](http://linux.die.net/man/3/mkfifo) to create a FIFO file. Then, we can pass data between processes by using the same FIFO file.
+The behavior of FIFO is similar to pipe. However, FIFO can pass data between different processes, which pipe can't. To use FIFO, you need to use [mkfifo()](http://linux.die.net/man/3/mkfifo) to create a FIFO file. Then, we can pass data between processes by using the same FIFO file.
 
 ## FIFO example 1
 
@@ -261,7 +261,7 @@ Your shell should run programs by [exec family function](http://pubs.opengroup.o
 * Every command would exist and execute successfully. You don't need to worry about segmentation fault happen.
 * You may assume all inputs are leagal. There's exactly one " " char between every command, pipe, and argument. For example: the test data won't be `ls|grep c`, `ls -l|grep c`, `ls || grep c` ,nor `ls   |    grep c`.
 * You may create your FIFO in your installing script. And use a fixed FIFO name if you need to.
-* You just need to dup a "O_WRONLY | O_NONBLOCK" FIFO to stderr. If you successfully dup FIFO to stderr, the stderr outputed by commands will disappear. If you dup a nonblock FIFO to stderr and this FIFO is not ready yet, the stderr may appear. That is fine for this homework. => i.e. In this homework, we don't care stderr disappear or not.
+* You just need to dup a "O_WRONLY | O_NONBLOCK" FIFO to stderr. If you successfully dup FIFO to stderr, the stderr outputted by commands will disappear. If you dup a nonblock FIFO to stderr and this FIFO is not ready yet, the stderr may appear. That is fine for this homework. => i.e. In this homework, we don't care stderr disappear or not.
 * Clipboard command: `^` will only appear at the end of line. `>` will only appear at the start of line. For example: `ls | ^`, `> | grep c`.
 * Clipboard command: `^`(cut commands' output to clipboard) won't be a single command. (but `>`(paste) will).
 * You don't need to handle synchronization problem. Therefore, you may assume shared memory won't be written at the same time.
@@ -301,7 +301,7 @@ When testing your shell, the input may be like this: `ls | grep .c | ./line_numb
 * +10% if your program can deal with most 100 commands.
 * + 5% if your shell has only one executable file.
 * + 0% if you provide a .git directory. (However, .git log may prove that your code is origin.)
-* -8%~80% if your code is (very similiar to / exactly the same as) any others' code. 
+* -8%~80% if your code is (very similar to / exactly the same as) any others' code. 
 
 ## Gently reminding
 
