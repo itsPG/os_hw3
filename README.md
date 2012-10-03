@@ -9,6 +9,10 @@ There are many example codes in this instruction, which demonstrate many useful 
 If you found any error in this homework or you have any problem about this homework, feel free to tell TAs on the E3. This instruction will be updated immediately if there's any error in this documentation and/or example codes.
 
 The newest files can always be found from [github](https://github.com/itsPG/os_hw3). You may want to download the auto compressed zip file from **[here](https://github.com/itsPG/os_hw3/zipball/master)**.
+
+There's a [sample video](https://github.com/itsPG/os_hw3/blob/sample_video/os_hw3_sample.m4v) showing how the finished homework would be (This is just a sample, feel free to add any feature or change the appearance to what you like). 
+
+
 ---
 
 # Instruction

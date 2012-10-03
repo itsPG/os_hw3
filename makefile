@@ -14,7 +14,7 @@ main2:
 	cp makefile ./deploy/makefile
 	cp line_number.cpp ./deploy/line_number.cpp
 	cp README.md ./deploy/README.md
-	cp os_hw3_sample.m4v ./deploy/os_hw3_sample.m4v
+	
 showlist: 
 	@echo $(files)
 
