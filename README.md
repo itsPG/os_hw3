@@ -1,6 +1,6 @@
 ## A quick start guide (for those who have no time).
 
-### Step 1: clone this repo
+### Step 1: clone this repo (~10MB)
 	git clone https://github.com/itsPG/os_hw3.git
 
 ### Step 2: build those example codes
@@ -8,12 +8,28 @@
 	make
 
 ### Step 3: read the [assigment](https://github.com/itsPG/os_hw3#assignment) and checkout sample_video branch to see a sample_video
+
+#### Install VLC (if you don't have a player)
+	sudo rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
+	sudo yum install vlc
+
+#### For Fedora 17
+	git checkout sample_video
+	vlc os_hw3_sample.m4v
+
+vlc should be replaced with your player's name.
+
+#### For Mac
 	git checkout sample_video
 	open os_hw3_sample.m4v
 
-### Step 4: Implement your program. See the [grading policy](https://github.com/itsPG/os_hw3#grade-) and choose what you want to do.
+### Step 4: Implement your program. 
 
-### Step 5: Upload your homework to [e3](http://dcpc.nctu.edu.tw). Make sure your homework has [those files](https://github.com/itsPG/os_hw3#submission).
+See the [grading policy](https://github.com/itsPG/os_hw3#grade-) and choose what you want to do.
+
+### Step 5: Upload your homework to [e3](http://dcpc.nctu.edu.tw).
+
+Make sure your homework has [those files](https://github.com/itsPG/os_hw3#submission).
 
 ---
 
