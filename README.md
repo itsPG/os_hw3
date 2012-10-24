@@ -7,7 +7,7 @@
 	cd os_hw3
 	make
 
-### Step 3: read the [assigment](https://github.com/itsPG/os_hw3#assignment) and checkout sample_video branch to see a sample_video
+### Step 3: read the [assignment](https://github.com/itsPG/os_hw3#assignment) and checkout sample_video branch to see a sample_video
 
 #### Install VLC (if you don't have a player)
 	sudo rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
@@ -306,7 +306,7 @@ Your shell should run programs by [exec family function](http://pubs.opengroup.o
 
 * The length of command is less than 3000. For example: The length of `ls | grep .txt` is 14.
 * Every command would exist and execute successfully. You don't need to worry about segmentation fault happen.
-* You may assume all inputs are leagal. There's exactly one " " char between every command, pipe, and argument. For example: the test data won't be `ls|grep c`, `ls -l|grep c`, `ls || grep c` ,nor `ls   |    grep c`.
+* You may assume all inputs are legal. There's exactly one " " char between every command, pipe, and argument. For example: the test data won't be `ls|grep c`, `ls -l|grep c`, `ls || grep c` ,nor `ls   |    grep c`.
 * You may create your FIFO in your installing script. And use a fixed FIFO name if you need to.
 * You just need to dup a "O_WRONLY | O_NONBLOCK" FIFO to stderr. If you successfully dup FIFO to stderr, the stderr outputted by commands will disappear. If you dup a nonblock FIFO to stderr and this FIFO is not ready yet, the stderr may appear. That is fine for this homework. => i.e. In this homework, we don't care stderr disappear or not.
 * Clipboard command: `^` will only appear at the end of line. `>` will only appear at the start of line. For example: `ls | ^`, `> | grep c`.
@@ -373,7 +373,7 @@ Please submit the homework assignment in zip or rar file format on the E3. Inclu
 * A guide help me compile and run your program in pdf, txt, html, or markdown format.
 * A simple report (100~500 words is recommended) in pdf, txt, html, or markdown format.
 * Your source codes.
-* Some script and/or makefile help me compile and run your porgram (if needed).
+* Some script and/or makefile help me compile and run your program (if needed).
 
 Late submission will be penalized.
 
