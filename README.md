@@ -354,8 +354,8 @@ Although this homework can be finished very quickly (There are only **150** line
 
 Please submit the homework assignment in zip or rar file format on the E3. Including
 
-* A guide help me compile and run your program.
-* A simple report (100~500 words is recommended).
+* A guide help me compile and run your program in pdf, txt, html, or markdown format.
+* A simple report (100~500 words is recommended) in pdf, txt, html, or markdown format.
 * Your source codes.
 * Some script and/or makefile help me compile and run your porgram (if needed).
 
