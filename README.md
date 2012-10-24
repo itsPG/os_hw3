@@ -2,15 +2,19 @@
 
 # Overview
 
-In this homework, you will understand what a process is. And you will know how to communicate with processes. 
+In this homework, you will understand what a process is and know how to communicate with processes. You will also learn some useful linux programming skills in this homework.
 
-There are many example codes in this instruction, which demonstrate many useful skills that can help you pass messages from one process to another process. After that, you will be asked to implement a simple shell.
+There are many example codes in this instruction, which demonstrate many useful skills that can help you pass messages from one process to another process. After that, you will be asked to implement a simple shell. (You may notice that those example codes provides all you need. You just have to rearrange them with some basic C/C++ programming language knowledge.)
+
+## About this homework
 
 If you found any error in this homework or you have any problem about this homework, feel free to tell TAs on the E3. This instruction will be updated immediately if there's any error in this documentation and/or example codes.
 
 The newest files can always be found from [github](https://github.com/itsPG/os_hw3). You may want to download the auto compressed zip file from **[here](https://github.com/itsPG/os_hw3/zipball/master)**.
 
 There's a [sample video](https://github.com/itsPG/os_hw3/blob/sample_video/os_hw3_sample.m4v) showing how the finished homework would be (This is just a sample, feel free to add any feature or change the appearance to what you like). 
+
+There's a [sample terminal record](http://shelr.tv/records/508850ad966080163f00002b) if you don't want to download a big file. (However, this record can not show how does your program active with others terminal.)
 
 
 ---
@@ -287,33 +291,51 @@ For example: `ls | ./line_number -C`
 
 For example: `ls | ./line_number -D`
 
+When testing your shell, the input may be like this: `ls | grep .c | ./line_number -C -D`. 
 
-When testing your shell, the input may be like this: `ls | grep .c | ./line_number -C -D`. In other words, please make sure your program can pass this test case `ls | grep .c | ./line_number -C -D`.
+### sample input commands
+
+There are some sample input commands listed below:
+
+	ls
+	ls -l -a
+	ls | grep .c
+	ls | grep .c | ./line_number -C -D
+	ls | grep | ./line_number -C -D
+	ls | ^
+	>
+	> | grep c
+
 
 ## Grade :
 
 ### Basic:
 
-* 40% A guide and scripts (or makefiles) help me compile and run your program.
+* 25% A guide and scripts (or makefiles) help me compile and run your program.
+* 25% A simple report tell me how do you implement your shell, what is the most difficult part of this homework, how many time you spend on this homework, and anything else you want to say.
 * 10% Your program can detect Ctrl+C.
 * 10% Your program can execute program with argument by exec family function.
-* 20% Your program can execute most 3 commands and connect them using pipe.
+* 10% Your program can execute most 3 commands and connect them using pipe.
 * 10% Your program can redirect stderr msg.
 * 10% Your program can use clipboard command.
 
 ### Extra:
 * +10% if your program can deal with most 100 commands.
 * + 5% if your shell has only one executable file.
-* + 0% if you provide a .git directory. (However, .git log may prove that your code is origin.)
 * -8%~80% if your code is (very similar to / exactly the same as) any others' code. 
 
 ## Gently reminding
 
-Although this homework can be finished very quickly (There are only **150** lines in my final code.), you may spend lots of time testing and dealing with pipes. Make sure you reserve enough time for this homework if this is your first time coping with pipes.
+Although this homework can be finished very quickly (There are only **150** lines in my [final code](http://i.imgur.com/dcefR.png).), you may spend lots of time testing and dealing with pipes. Make sure you reserve enough time for this homework if this is your first time coping with pipes.
 
 # Submission
 
-Please submit the homework assignment in zip or rar file format on the E3.
+Please submit the homework assignment in zip or rar file format on the E3. Including
+
+* A guide help me compile and run your program.
+* A simple report (100~500 words is recommended).
+* Your source codes.
+* Some script and/or makefile help me compile and run your porgram (if needed).
 
 Late submission will be penalized.
 
