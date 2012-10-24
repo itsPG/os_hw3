@@ -1,3 +1,19 @@
+## A quick start guide (for those who have no time).
+
+### Step 1: clone this repo
+	git clone https://github.com/itsPG/os_hw3.git
+
+### Step 2: build those example codes
+	make
+
+### Step 3: read the [assigment](https://github.com/itsPG/os_hw3#assignment) and checkout sample_video branch to see a sample_video
+	git checkout sample_video
+	open os_hw3_sample.m4v
+
+### Step 4: Implement your program. See the [grading policy](https://github.com/itsPG/os_hw3#grade-) and choose what you want to do.
+
+### Step 5: Upload your homework to [e3](http://dcpc.nctu.edu.tw). Make sure your homework has [those files](https://github.com/itsPG/os_hw3#submission).
+
 # HW #3. Process Concept
 
 # Overview
@@ -10,11 +26,13 @@ There are many example codes in this instruction, which demonstrate many useful 
 
 If you found any error in this homework or you have any problem about this homework, feel free to tell TAs on the E3. This instruction will be updated immediately if there's any error in this documentation and/or example codes.
 
-The newest files can always be found from [github](https://github.com/itsPG/os_hw3). You may want to download the auto compressed zip file from **[here](https://github.com/itsPG/os_hw3/zipball/master)**.
+The newest files can always be found from [github](https://github.com/itsPG/os_hw3). You may want to download the auto compressed zip file from [here](https://github.com/itsPG/os_hw3/zipball/master) or just clone this repo by `git clone https://github.com/itsPG/os_hw3.git`. Use `make` to build all of those example codes.
 
 There's a [sample video](https://github.com/itsPG/os_hw3/blob/sample_video/os_hw3_sample.m4v) showing how the finished homework would be (This is just a sample, feel free to add any feature or change the appearance to what you like). 
 
 There's a [sample terminal record](http://shelr.tv/records/508850ad966080163f00002b) if you don't want to download a big file. (However, this record can not show how does your program active with others terminal.)
+
+
 
 
 ---
@@ -273,7 +291,6 @@ Your shell should run programs by [exec family function](http://pubs.opengroup.o
 * Clipboard command: `^` will only appear at the end of line. `>` will only appear at the start of line. For example: `ls | ^`, `> | grep c`.
 * Clipboard command: `^`(cut commands' output to clipboard) won't be a single command. (but `>`(paste) will).
 * You don't need to handle synchronization problem. Therefore, you may assume shared memory won't be written at the same time.
-
 
 ## For testing your shell :
 
