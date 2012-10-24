@@ -4,6 +4,7 @@
 	git clone https://github.com/itsPG/os_hw3.git
 
 ### Step 2: build those example codes
+	cd os_hw3
 	make
 
 ### Step 3: read the [assigment](https://github.com/itsPG/os_hw3#assignment) and checkout sample_video branch to see a sample_video
@@ -13,6 +14,10 @@
 ### Step 4: Implement your program. See the [grading policy](https://github.com/itsPG/os_hw3#grade-) and choose what you want to do.
 
 ### Step 5: Upload your homework to [e3](http://dcpc.nctu.edu.tw). Make sure your homework has [those files](https://github.com/itsPG/os_hw3#submission).
+
+---
+
+---
 
 # HW #3. Process Concept
 
