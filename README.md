@@ -3,11 +3,11 @@
 ### Step 1: clone this repo (~10MB)
 	git clone https://github.com/itsPG/os_hw3.git
 
-### Step 2: build those example codes
+### Step 2: build the example code
 	cd os_hw3
 	make
 
-### Step 3: read the [assignment](https://github.com/itsPG/os_hw3#assignment) and checkout sample_video branch to see a sample_video
+### Step 3: read the [assignment description](https://github.com/itsPG/os_hw3#assignment) and checkout the sample_video branch to see the sample_video
 
 #### Install VLC (if you don't have a player)
 	sudo rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
@@ -29,7 +29,7 @@ See the [grading policy](https://github.com/itsPG/os_hw3#grade-) and choose what
 
 ### Step 5: Upload your homework to [e3](http://dcpc.nctu.edu.tw).
 
-Make sure your homework has [those files](https://github.com/itsPG/os_hw3#submission).
+Make sure your homework has [these files](https://github.com/itsPG/os_hw3#submission).
 
 ---
 
@@ -45,16 +45,9 @@ There are many example codes in this instruction, which demonstrate many useful 
 
 ## About this homework
 
-If you found any error in this homework or you have any problem about this homework, feel free to tell TAs on the E3. This instruction will be updated immediately if there's any error in this documentation and/or example codes.
+If you find any error in this homework or you have any problem about this homework, please contact me (smartPG@gmail.com). This instruction will be updated immediately if there's any error in this documentation and/or example code.
 
-The newest files can always be found from [github](https://github.com/itsPG/os_hw3). You may want to download the auto compressed zip file from [here](https://github.com/itsPG/os_hw3/zipball/master) or just clone this repo by `git clone https://github.com/itsPG/os_hw3.git`. Use `make` to build all of those example codes.
-
-There's a [sample video](https://github.com/itsPG/os_hw3/blob/sample_video/os_hw3_sample.m4v) showing how the finished homework would be (This is just a sample, feel free to add any feature or change the appearance to what you like). 
-
-There's a [sample terminal record](http://shelr.tv/records/508850ad966080163f00002b) if you don't want to download a big file. (However, this record can not show how does your program active with others terminal.)
-
-
-
+The homework can be found from [github](https://github.com/itsPG/os_hw3). You may want to download the zip file from [here](https://github.com/itsPG/os_hw3/zipball/master) or just clone this repo by `git clone https://github.com/itsPG/os_hw3.git`. Use `make` to build the sample code.
 
 ---
 
@@ -66,11 +59,11 @@ There's a [sample terminal record](http://shelr.tv/records/508850ad966080163f000
 
 In this part, we will show how to list those running process and extract information from `/proc`.
 
-If you want to know more about this special virtual directory. You may look up [Kernel documentation](http://www.kernel.org/doc/Documentation/filesystems/proc.txt) for more information.
+If you want to know more about this special virtual directory. You may look up [Linux Kernel documentation](http://www.kernel.org/doc/Documentation/filesystems/proc.txt) for more information.
 
 ### Step 1
 
-Open your terminal and something we want to observe. In this example, you may open Firefox, which is installed as a default application in Fedora.
+Open your terminal or any application you want to observe. In this example, you may open Firefox, which is installed as a default application in Fedora.
 
 ### Step 2 
 
@@ -89,7 +82,7 @@ Type `cd /proc/$(PID of Firefox)`. List this folder by type `ls`.
 
 ## B. Memory layout of a process
 
-A typical memory representation of C program consists 5 sections.
+A typical memory layout of a Linux process consists of 5 sections.
 
 
 >Higher Memory address
@@ -129,15 +122,15 @@ You can also use C++ in this homework.
 
 vim is recommended.
 
-However, gedit works fine, and I use [sublime text](http://www.sublimetext.com/) to finish this homework.
+However, gedit works fine, and I use [sublime text](http://www.sublimetext.com/) for this homework.
 
 ### makefile
 
-A simple makefile could save you so much time.
+A simple makefile could save you much time.
 
 ### git / svn
 
-A good CVS (Concurrent Versions System) could help you track your program and help you recover your code from a failed modifying. I use [gitlab](http://gitlabhq.com/) for personal CVS and [github](https://github.com/) for public CVS. However, YOU SHOULD DO YOUR HOMEWORK INDIVIDUALLY. Any plagiarizing will be punished.
+A good CVS (Concurrent Versions System) could help you track your program and help you recover your code from a failed modifying. I use [gitlab](http://gitlabhq.com/) for personal CVS and [github](https://github.com/) for public CVS. However, YOU SHOULD DO YOUR HOMEWORK INDIVIDUALLY. Plagiarism will be punished.
 
 
 ---
@@ -146,12 +139,12 @@ A good CVS (Concurrent Versions System) could help you track your program and he
 
 ### Fork
 
-Fork() creates a new process by duplicating the calling process.
+fork() creates a new process by duplicating the calling process.
 We call the old process "parent", and the new process "child".
 
-Basically, we can think the behavior of fork is just like "it creates a copy process of itself, except some information will be changed." If you want to know what EXACTLY fork() do, you may want to check [fork specification](http://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html) for more detail.
+Basically, we can think the behavior of fork as "creating a copy of the process itself, except some information will be changed." If you want to know what EXACTLY fork() does, you may want to check [fork specification](http://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html) for more detail.
 
-Fork() returns
+fork() returns
 
 > : -1, if fork() failed.
 
@@ -168,7 +161,7 @@ Fork() returns
 
 ### File Descriptor
 
-File Descriptor provides a interface that we can manipulate file. When a new process is initialized, there are 3 default File Descriptors will be opened: stdin(0), stdout(1), and stderr(2). In Linux kernel, every process will have a unique File Descriptor Table, which denotes those opened File Descriptors.
+File Descriptor provides a interface that we can manipulate file. When a new process is initialized, there are 3 default file descriptors will be opened: stdin(0), stdout(1), and stderr(2). In Linux kernel, every process will have a unique File Descriptor Table, which records those opened File Descriptors.
 
 Some useful functions are listed below:
 
@@ -220,9 +213,9 @@ In this homework, we will cover
 
 Signal, also known as software interrupt, is a way to communicate with process. For example, when you press `Ctrl+C`, a SIGQUIT is sent to quit the process which is running. You can use `kill -l` to list all available signal.
 
-When process receive a signal, it can ignore it, do the default action (for example: quit), or do the registered handle function. 
+When process receives a signal, it can ignore it, take the default action (for example: quit), or invoke the registered handle function. 
 
-Linux (usually) doesn't allow user to create new signal type, but it reserves two signal: SIGUSR1, SIGUSR2 for IPC use. The default action of SIGUSR1 and SIGUSR2 is "ignore".
+Linux (usually) doesn't allow user to create new signal type, but it reserves two signals: SIGUSR1, SIGUSR2 for IPC use. The default action of SIGUSR1 and SIGUSR2 is "ignore".
 
 Some useful functions are listed below:
 
@@ -240,7 +233,7 @@ Some useful functions are listed below:
 
 ## Pipe
 
-Pipe is a useful way to send data from one process to another process through file descriptor, however, it can only communicate between processes those have the same parent. Let's see how it work:
+Pipe is a useful way to send data from one process to another process through file descriptor, however, it can only communicate between processes which have the same parent. Let's see how it work:
 
 	int main()
 	{
@@ -315,7 +308,7 @@ Your shell should run programs by [exec family function](http://pubs.opengroup.o
 
 ## For testing your shell :
 
-I wrote a program that may help you test your shell. This program reads data from stdin and writes modified data to stdout until end of input. The source file is named as "line_number.cpp". 
+A tool is provided to help you test your shell. This tool reads data from stdin and writes modified data to stdout until end of input. The source file is named as "line_number.cpp". 
 
 #### 1. add line number
 
@@ -344,8 +337,14 @@ There are some sample input commands listed below:
 	>
 	> | grep c
 
+### Sample shell
 
-## Grade :
+There's a [sample video](https://github.com/itsPG/os_hw3/blob/sample_video/os_hw3_sample.m4v) showing how the finished homework looks like (This is just a sample, feel free to add any feature or change the appearance to what you like). 
+
+There's a [sample terminal record](http://shelr.tv/records/508850ad966080163f00002b) if you don't want to download a big file.
+
+
+## Grading :
 
 ### Basic:
 
@@ -362,15 +361,15 @@ There are some sample input commands listed below:
 * + 5% if your shell has only one executable file.
 * -8%~80% if your code is (very similar to / exactly the same as) any others' code. 
 
-## Gently reminding
+## Gentle reminder:
 
 Although this homework can be finished very quickly (There are only **150** lines in my [final code](http://i.imgur.com/dcefR.png).), you may spend lots of time testing and dealing with pipes. Make sure you reserve enough time for this homework if this is your first time coping with pipes.
 
 # Submission
 
-Please submit the homework assignment in zip or rar file format on the E3. Including
+Please submit the homework assignment in zip or rar file format on E3. Including
 
-* A guide help me compile and run your program in pdf, txt, html, or markdown format.
+* A guide to help me compile and run your program in pdf, txt, html, or markdown format.
 * A simple report (100~500 words is recommended) in pdf, txt, html, or markdown format.
 * Your source codes.
 * Some script and/or makefile help me compile and run your program (if needed).
