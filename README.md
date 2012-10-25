@@ -9,7 +9,7 @@
 
 ### Step 3: read the [assignment description](https://github.com/itsPG/os_hw3#assignment) and checkout the sample_video branch to see the sample_video
 
-#### Install VLC (if you don't have a player)
+#### For Fedora 17 / Install VLC (if you don't have a player)
 	sudo rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
 	sudo yum install vlc
 
@@ -25,7 +25,7 @@ vlc should be replaced with your player's name.
 
 ### Step 4: Implement your program. 
 
-See the [grading policy](https://github.com/itsPG/os_hw3#grade-) and choose what you want to do.
+See the [grading policy](https://github.com/itsPG/os_hw3#grading-) and choose what you want to do.
 
 ### Step 5: Upload your homework to [e3](http://dcpc.nctu.edu.tw).
 
