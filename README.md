@@ -324,7 +324,7 @@ For example: `ls | ./line_number -D`
 
 When testing your shell, the input may be like this: `ls | grep .c | ./line_number -C -D`. 
 
-### sample input commands
+### Sample input commands
 
 There are some sample input commands listed below:
 
@@ -337,12 +337,12 @@ There are some sample input commands listed below:
 	>
 	> | grep c
 
+### [Sample output](http://shelr.tv/records/508850ad966080163f00002b)
+
+
 ### Sample shell
 
 There's a [sample video](https://github.com/itsPG/os_hw3/blob/sample_video/os_hw3_sample.m4v) showing how the finished homework looks like (This is just a sample, feel free to add any feature or change the appearance to what you like). 
-
-There's a [sample terminal record](http://shelr.tv/records/508850ad966080163f00002b) if you don't want to download a big file.
-
 
 ## Grading :
 
